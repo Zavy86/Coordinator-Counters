@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-->
+ ! Counters - Default localization
+ !
+ ! @package Coordinator\Modules\Counters
+ ! @author  Manuel Zavatta <manuel.zavatta@gmail.com>
+ ! @link    http://www.coordinator.it
+<!-->
+<locale>
+
+ <!-- module -->
+ <text key="counters">Contatori</text>
+ <text key="counters-description">Gestione Contatori</text>
+
+ <!-- authorizations -->
+ <text key="counters-manage">Gestione</text>
+ <text key="counters-manage-description">Gestione modulo contatori</text>
+ <text key="counters-usage">Abilitazione</text>
+ <text key="counters-usage-description">Utilizzo del modulo contatori</text>
+
+ <!-- cCountersCounter -->
+ <text key="cCountersCounter">Contatore</text>
+ <text key="cCountersCounter-event-created">Creazione</text>
+ <text key="cCountersCounter-event-updated">Aggiornamento</text>
+ <text key="cCountersCounter-event-deleted">Eliminazione</text>
+ <text key="cCountersCounter-event-undeleted">Ripristino</text>
+ <text key="cCountersCounter-alert-error">Si è verificato un errore durante il salvataggio del contatore</text>
+ <text key="cCountersCounter-alert-exists">Il contatore non è stato trovato</text>
+ <text key="cCountersCounter-alert-stored">Il contatore è stato salvato</text>
+ <text key="cCountersCounter-alert-deleted">Il contatore è stato eliminato</text>
+ <text key="cCountersCounter-alert-undeleted">Il contatore è stato ripristinato</text>
+ <text key="cCountersCounter-alert-removed">Il contatore è stato rimosso</text>
+ <text key="cCountersCounter-confirm-delete">Confermi di voler eliminare questo contatore?</text>
+ <text key="cCountersCounter-confirm-undelete">Confermi di voler ripristinare questo contatore?</text>
+ <text key="cCountersCounter-confirm-remove">Confermi di voler rimuovere irrecuperabilmente questo contatore dal database?</text>
+ <text key="cCountersCounter-warning-deleted">Attenzione, questo contatore risulta eliminato!</text>
+ <text key="cCountersCounter-property-name">Contatore</text>
+ <text key="cCountersCounter-property-description">Descrizione</text>
+ <text key="cCountersCounter-property-identifier">Identificativo</text>
+ <text key="cCountersCounter-placeholder-name">Nome del contatore</text>
+ <text key="cCountersCounter-placeholder-description">Eventuale descrizione del contatore</text>
+ <text key="cCountersCounter-placeholder-identifier">Codice identificativo o serial number del contatore</text>
+
+ <!-- cCountersCounterMeasurement -->
+ <text key="cCountersCounterMeasurement">Misurazione</text>
+ <text key="cCountersCounterMeasurement-alert-error">Si è verificato un errore durante il salvataggio della misurazione</text>
+ <text key="cCountersCounterMeasurement-alert-exists">La misurazione non è stata trovata</text>
+ <text key="cCountersCounterMeasurement-alert-stored">La misurazione è stata salvata</text>
+ <text key="cCountersCounterMeasurement-alert-deleted">La misurazione è stata eliminata</text>
+ <text key="cCountersCounterMeasurement-alert-undeleted">La misurazione è stata ripristinata</text>
+ <text key="cCountersCounterMeasurement-alert-removed">La misurazione è stata rimossa</text>
+ <text key="cCountersCounterMeasurement-confirm-delete">Confermi di voler eliminare questa misurazione?</text>
+ <text key="cCountersCounterMeasurement-confirm-undelete">Confermi di voler ripristinare questa misurazione?</text>
+ <text key="cCountersCounterMeasurement-confirm-remove">Confermi di voler rimuovere irrecuperabilmente questa misurazione dal database?</text>
+ <text key="cCountersCounterMeasurement-warning-deleted">Attenzione, questa misurazione risulta eliminata!</text>
+ <text key="cCountersCounterMeasurement-property-period">Periodo</text>
+ <text key="cCountersCounterMeasurement-property-current">Attuale</text>
+ <text key="cCountersCounterMeasurement-property-previous">Precedente</text>
+ <text key="cCountersCounterMeasurement-placeholder-period">Periodo della misurazione</text>
+ <text key="cCountersCounterMeasurement-placeholder-current">Valore attuale del contatore</text>
+ <text key="cCountersCounterMeasurement-placeholder-previous">Valore precedente del contatore</text>
+
+ <!-- navigation -->
+ <text key="nav-counters-list">Contatori</text>
+ <text key="nav-counters-add">Aggiungi contatore</text>
+ <text key="nav-counters-operations-edit">Modifica contatore</text>
+ <text key="nav-counters-operations-measurement_add">Aggiungi misurazione</text>
+
+ <!-- counters_list -->
+ <text key="counters_list">Contatori</text>
+ <text key="counters_list-tr-unvalued">Non sono presenti contatori da mostrare..</text>
+
+ <!-- counters_view -->
+ <text key="counters_view">Contatore: <![CDATA[{0}]]></text>
+ <text key="counters_view-tab-informations">Informazioni</text>
+ <text key="counters_view-tab-measurements">Misurazioni</text>
+ <text key="counters_view-tab-logs">Eventi</text>
+ <text key="counters_view-measurements-tr-unvalued">Non sono presenti impostazioni da mostrare..</text>
+ <text key="counters_view-measurements-th-value">Valore</text>
+ <text key="counters_view-measurements-modal-title-view">Misurazione del contatore <![CDATA[{0}]]></text>
+ <text key="counters_view-measurements-modal-title-add">Aggiungi misurazione al contatore <![CDATA[{0}]]></text>
+ <text key="counters_view-measurements-modal-title-edit">Modifica misurazione del contatore <![CDATA[{0}]]></text>
+
+ <!-- counters_edit -->
+ <text key="counters_edit">Modifica: <![CDATA[{0}]]></text>
+ <text key="counters_edit-add">Aggiungi contatore</text>
+
+</locale>
