@@ -33,7 +33,7 @@
    $return_array=array();
    // setting events
    if($properties['idMeasurement']){
-    $return_array[]=api_text("cCountersCounterMeasurement").": ".(new cCountersCounterMeasurement($properties['idMeasurement']))->period;
+    $return_array[]=api_text("cCountersCounterMeasurement")." ".(new cCountersCounterMeasurement($properties['idMeasurement']))->period/*." #".$properties['idMeasurement']*/;
    }
    // return
    return implode(" | ",$return_array);
@@ -46,6 +46,20 @@
    * @return object[]|false Array of measurements objects or false
    */
   public function getMeasurements($limit=null){return api_sortObjectsArray(cCountersCounterMeasurement::availables(true,["fkCounter"=>$this->id],$limit),"period",true);}
+
+  /**
+   * Get Last Measurement
+   *
+   * @return object[]|false Last measurements objects or false
+   */
+  public function getLastMeasurement(){
+   /** @todo migliorabile? */
+   $measurements_array=cCountersCounterMeasurement::select("`fkCounter`='".$this->id."'","`period` DESC",1);
+   // check results
+   if(!is_array($measurements_array) || !count($measurements_array)){return false;}
+   // return
+   return reset($measurements_array);
+  }
 
   /**
    * Check

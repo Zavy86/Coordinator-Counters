@@ -24,6 +24,7 @@
  <text key="cCountersCounter-event-updated">Aggiornamento</text>
  <text key="cCountersCounter-event-deleted">Eliminazione</text>
  <text key="cCountersCounter-event-undeleted">Ripristino</text>
+ <text key="cCountersCounter-event-removed">Rimozione</text>
  <text key="cCountersCounter-alert-error">Si è verificato un errore durante il salvataggio del contatore</text>
  <text key="cCountersCounter-alert-exists">Il contatore non è stato trovato</text>
  <text key="cCountersCounter-alert-stored">Il contatore è stato salvato</text>
