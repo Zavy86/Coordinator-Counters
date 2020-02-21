@@ -31,10 +31,23 @@
   public static function log_decode($event,$properties){
    // make return array
    $return_array=array();
-   // setting events
+   // subobject events
    if($properties['_obj']=="cCountersCounterMeasurement"){$return_array[]=api_text($properties['_obj'])." ".api_period($properties['_period']);}
    // return
    return implode(" | ",$return_array);
+  }
+
+  /**
+   * Get Label
+   *
+   * @return string Counter label
+   */
+  public function getLabel(){
+   // make label
+   $label=$this->name;
+   if($this->identifier){$label.=" (".$this->identifier.")";}
+   // return
+   return $label;
   }
 
   /**

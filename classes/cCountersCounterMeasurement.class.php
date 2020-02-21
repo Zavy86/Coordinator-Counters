@@ -62,10 +62,10 @@
    */
   public function form_edit(array $additional_parameters=null){
    // build form
-   $form=new strForm(api_url(array_merge(["mod"=>"counters","scr"=>"controller","act"=>"store","obj"=>"cCountersCounterMeasurement","idMeasurement"=>$this->id],$additional_parameters)),"POST",null,null,"counters_measurement_edit_form");
+   $form=new strForm(api_url(array_merge(["mod"=>"counters","scr"=>"controller","act"=>"store","obj"=>"cCountersCounterMeasurement","idMeasurement"=>$this->id],$additional_parameters)),"POST",null,null,"counters_counter_measurement_edit_form");
    // fields
    $form->addField("select","fkCounter",api_text("cCountersCounterMeasurement-property-fkCounter"),$this->fkCounter,api_text("cCountersCounterMeasurement-placeholder-fkCounter"),null,null,null,"required");
-   foreach(cCountersCounter::availables(true) as $counter_fobj){$form->addFieldOption($counter_fobj->id,$counter_fobj->value);}
+   foreach(cCountersCounter::availables(true) as $counter_fobj){$form->addFieldOption($counter_fobj->id,$counter_fobj->getLabel());}
    $form->addField("select","period",api_text("cCountersCounterMeasurement-property-period"),$this->period,api_text("cCountersCounterMeasurement-placeholder-period"),null,null,null,"required");
    foreach(api_period_range(date("Ym",strtotime("-1 month")),min(array_filter(array(date("Ym",strtotime("-3 month")),$this->period)))) as $value=>$label){$form->addFieldOption($value,$label);}
    $form->addField("text","current",api_text("cCountersCounterMeasurement-property-current"),$this->current,api_text("cCountersCounterMeasurement-placeholder-current"),null,null,null,"required");

@@ -7,7 +7,7 @@
  * @link    http://www.coordinator.it
  */
 
- // build measurements description list
+ // build measurements table
  $measurements_table=new strTable(api_text("counters_view-measurements-tr-unvalued"));
  $measurements_table->addHeader(api_text("cCountersCounterMeasurement-property-period"),"nowrap");
  $measurements_table->addHeader(api_text("counters_view-measurements-th-value"),"nowrap text-right");
@@ -28,9 +28,9 @@
   // make counters row
   $measurements_table->addRow(implode(" ",$tr_class_array));
   $measurements_table->addRowField(api_period($measurement_fobj->period),"nowrap");
-  $measurements_table->addRowField(api_number_format($measurement_fobj->getValue(),0),"nowrap text-right");
-  $measurements_table->addRowField(api_number_format($measurement_fobj->current,0),"nowrap text-right");
-  $measurements_table->addRowField(api_number_format($measurement_fobj->previous,0),"nowrap text-right");
+  $measurements_table->addRowField(api_number_format($measurement_fobj->getValue(),2,null,false,true),"nowrap text-right");
+  $measurements_table->addRowField(api_number_format($measurement_fobj->current,2,null,false,true),"nowrap text-right");
+  $measurements_table->addRowField(api_number_format($measurement_fobj->previous,2,null,false,true),"nowrap text-right");
   $measurements_table->addRowField("&nbsp;","truncate-ellipsis");
   $measurements_table->addRowField($ob->render(),"nowrap text-right");
  }
