@@ -40,7 +40,7 @@
  <text key="cCountersCounter-property-identifier">Identificativo</text>
  <text key="cCountersCounter-placeholder-name">Nome del contatore</text>
  <text key="cCountersCounter-placeholder-description">Eventuale descrizione del contatore</text>
- <text key="cCountersCounter-placeholder-identifier">Codice identificativo o serial number del contatore</text>
+ <text key="cCountersCounter-placeholder-identifier">Codice identificativo o numero di serie del contatore</text>
 
  <!-- cCountersCounterMeasurement -->
  <text key="cCountersCounterMeasurement">Misurazione</text>
@@ -57,7 +57,7 @@
  <text key="cCountersCounterMeasurement-property-period">Periodo</text>
  <text key="cCountersCounterMeasurement-property-current">Attuale</text>
  <text key="cCountersCounterMeasurement-property-previous">Precedente</text>
- <text key="cCountersCounterMeasurement-placeholder-period">Periodo della misurazione</text>
+ <text key="cCountersCounterMeasurement-placeholder-period">Seleziona il periodo della misurazione..</text>
  <text key="cCountersCounterMeasurement-placeholder-current">Valore attuale del contatore</text>
  <text key="cCountersCounterMeasurement-placeholder-previous">Valore precedente del contatore</text>
 
@@ -76,7 +76,7 @@
  <text key="counters_view-tab-informations">Informazioni</text>
  <text key="counters_view-tab-measurements">Misurazioni</text>
  <text key="counters_view-tab-logs">Eventi</text>
- <text key="counters_view-measurements-tr-unvalued">Non sono presenti impostazioni da mostrare..</text>
+ <text key="counters_view-measurements-tr-unvalued">Non sono presenti misurazioni da mostrare..</text>
  <text key="counters_view-measurements-th-value">Valore</text>
  <text key="counters_view-measurements-modal-title-view">Misurazione del contatore <![CDATA[{0}]]></text>
  <text key="counters_view-measurements-modal-title-add">Aggiungi misurazione al contatore <![CDATA[{0}]]></text>

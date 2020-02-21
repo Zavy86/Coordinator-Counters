@@ -32,9 +32,7 @@
    // make return array
    $return_array=array();
    // setting events
-   if($properties['idMeasurement']){
-    $return_array[]=api_text("cCountersCounterMeasurement")." ".(new cCountersCounterMeasurement($properties['idMeasurement']))->period/*." #".$properties['idMeasurement']*/;
-   }
+   if($properties['_obj']=="cCountersCounterMeasurement"){$return_array[]=api_text($properties['_obj'])." ".api_period($properties['_period']);}
    // return
    return implode(" | ",$return_array);
   }
