@@ -27,7 +27,7 @@
   if($measurement_fobj->deleted){$tr_class_array[]="deleted";}
   // make counters row
   $measurements_table->addRow(implode(" ",$tr_class_array));
-  $measurements_table->addRowField(api_tag("samp",$measurement_fobj->period),"nowrap");
+  $measurements_table->addRowField(api_period($measurement_fobj->period),"nowrap");
   $measurements_table->addRowField(api_number_format($measurement_fobj->getValue(),0),"nowrap text-right");
   $measurements_table->addRowField(api_number_format($measurement_fobj->current,0),"nowrap text-right");
   $measurements_table->addRowField(api_number_format($measurement_fobj->previous,0),"nowrap text-right");
