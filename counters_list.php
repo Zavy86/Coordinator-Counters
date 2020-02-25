@@ -28,7 +28,8 @@
  // build table
  $table=new strTable(api_text("counters_list-tr-unvalued"));
  $table->addHeader($filter->link(api_icon("fa-filter",api_text("filters-modal-link"),"hidden-link")),"text-center",16);
- $table->addHeader(api_text("cCountersCounter-property-name"),null,"100%");
+ $table->addHeader(api_text("cCountersCounter-property-name"),"nowrap");
+ $table->addHeader(api_text("cCountersCounter-property-description"),null,"100%");
  $table->addHeader(api_text("cCountersCounter-property-identifier"),"nowrap text-right");
  $table->addHeader("&nbsp;",null,16);
  // cycle all counters
@@ -45,7 +46,8 @@
   // make counters row
   $table->addRow(implode(" ",$tr_class_array));
   $table->addRowFieldAction(api_url(["scr"=>"counters_view","idCounter"=>$counter_fobj->id]),"fa-search",api_text("table-td-view"));
-  $table->addRowField($counter_fobj->name,"truncate-ellipsis");
+  $table->addRowField($counter_fobj->name,"nowrap");
+  $table->addRowField($counter_fobj->description,"truncate-ellipsis");
   $table->addRowField(api_tag("samp",$counter_fobj->identifier),"nowrap text-right");
   $table->addRowField($ob->render(),"nowrap text-right");
  }
