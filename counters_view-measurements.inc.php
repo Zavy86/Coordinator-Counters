@@ -53,6 +53,7 @@
   // add modal to counter
   $app->addModal($modal);
   // modal scripts
+  if(!$selected_measurement_obj->id){$app->addScript("$(function(){\$('#form_counters_counter_measurement_edit_form_input_previous').val('".(new cCountersCounter($_REQUEST['idCounter']))->getLastMeasurement()->current."');});");}
   $app->addScript("$(function(){\$('#modal_counters_view-measurements').modal({show:true,backdrop:'static',keyboard:false});});");
  }
 
