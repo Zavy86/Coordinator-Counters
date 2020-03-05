@@ -24,6 +24,19 @@
   protected $identifier;
 
   /**
+   * Check
+   *
+   * @return boolean
+   * @throws Exception
+   */
+  protected function check(){
+   // check properties
+   if(!strlen(trim($this->name))){throw new Exception("Counter name is mandatory..");}
+   // return
+   return true;
+  }
+
+  /**
    * Decode log properties
    *
    * {@inheritdoc}
@@ -70,19 +83,6 @@
    if(!is_array($measurements_array) || !count($measurements_array)){return false;}
    // return
    return reset($measurements_array);
-  }
-
-  /**
-   * Check
-   *
-   * @return boolean
-   * @throws Exception
-   */
-  protected function check(){
-   // check properties
-   if(!strlen(trim($this->name))){throw new Exception("Counter name is mandatory..");}
-   // return
-   return true;
   }
 
   /**
