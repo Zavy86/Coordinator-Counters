@@ -25,20 +25,6 @@
   protected $previous;
 
   /**
-   * Get Counter
-   *
-   * @return object
-   */
-  public function getCounter(){return new cCountersCounter($this->fkCounter);}
-
-  /**
-   * Get Value
-   *
-   * @return double
-   */
-  public function getValue(){return (double)$this->current-$this->previous;}
-
-  /**
    * Check
    *
    * @return boolean
@@ -53,6 +39,20 @@
    // return
    return true;
   }
+
+  /**
+   * Get Counter
+   *
+   * @return object
+   */
+  public function getCounter(){return new cCountersCounter($this->fkCounter);}
+
+  /**
+   * Get Value
+   *
+   * @return double
+   */
+  public function getValue(){return (double)$this->current-$this->previous;}
 
   /**
    * Edit form

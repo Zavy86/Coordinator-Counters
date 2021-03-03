@@ -38,9 +38,9 @@
      $counter_obj->store($_REQUEST);
      api_alerts_add(api_text("cCountersCounter-alert-stored"),"success");
      break;
-    case "version":
-     $counter_obj->version($_REQUEST["version"],$_FILES["file"]);
-     api_alerts_add(api_text("cCountersCounter-alert-stored"),"success"); /** @todo specific alert? */
+    case "move":
+     $counter_obj->move($_REQUEST["direction"]);
+     api_alerts_add(api_text("cCountersCounter-alert-moved"),"success"); /** @todo specific alert? */
      break;
     case "delete":
      $counter_obj->delete();
