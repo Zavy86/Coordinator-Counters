@@ -23,6 +23,7 @@
  <text key="cCountersCounter-alert-error">Si è verificato un errore durante il salvataggio del contatore</text>
  <text key="cCountersCounter-alert-exists">Il contatore non è stato trovato</text>
  <text key="cCountersCounter-alert-stored">Il contatore è stato salvato</text>
+ <text key="cCountersCounter-alert-moved">Il contatore è stato spostato</text>
  <text key="cCountersCounter-alert-deleted">Il contatore è stato eliminato</text>
  <text key="cCountersCounter-alert-undeleted">Il contatore è stato ripristinato</text>
  <text key="cCountersCounter-alert-removed">Il contatore è stato rimosso</text>

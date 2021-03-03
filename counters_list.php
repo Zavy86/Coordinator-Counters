@@ -20,7 +20,7 @@
  $filter->addSearch(["name","description","identifier"]);
  // build query object
  $query=new cQuery("counters__counters",$filter->getQueryWhere());
- $query->addQueryOrderField("name");
+ $query->addQueryOrderField("order");
  // build pagination object
  $pagination=new strPagination($query->getRecordsCount());
  // cycle all results
@@ -31,14 +31,16 @@
  $table->addHeader(api_text("cCountersCounter-property-name"),"nowrap");
  $table->addHeader(api_text("cCountersCounter-property-description"),null,"100%");
  $table->addHeader(api_text("cCountersCounter-property-identifier"),"nowrap text-right");
- $table->addHeader("&nbsp;",null,16);
+ if(api_checkAuthorization("counters-manage")){$table->addHeader("&nbsp;",null,16);}
  // cycle all counters
  foreach($counters_array as $counter_fobj){
   // build operation button
   $ob=new strOperationsButton();
-  $ob->addElement(api_url(["scr"=>"counters_edit","idCounter"=>$counter_fobj->id,"return"=>["scr"=>"counters_list"]]),"fa-pencil",api_text("table-td-edit"),(api_checkAuthorization("counters-manage")));
-  if($counter_fobj->deleted){$ob->addElement(api_url(["scr"=>"controller","act"=>"undelete","obj"=>"cCountersCounter","idCounter"=>$counter_fobj->id,"return"=>["scr"=>"counters_list"]]),"fa-trash-o",api_text("table-td-undelete"),(api_checkAuthorization("counters-manage")),api_text("cCountersCounter-confirm-undelete"));}
-  else{$ob->addElement(api_url(["scr"=>"controller","act"=>"delete","obj"=>"cCountersCounter","idCounter"=>$counter_fobj->id,"return"=>["scr"=>"counters_list"]]),"fa-trash",api_text("table-td-delete"),(api_checkAuthorization("counters-manage")),api_text("cCountersCounter-confirm-delete"));}
+  $ob->addElement(api_url(["scr"=>"controller","act"=>"move","direction"=>"up","obj"=>"cCountersCounter","idCounter"=>$counter_fobj->id,"return"=>["scr"=>"counters_list"]]),"fa-arrow-up",api_text("table-td-move-up"),($counter_fobj->order>1));
+  $ob->addElement(api_url(["scr"=>"controller","act"=>"move","direction"=>"down","obj"=>"cCountersCounter","idCounter"=>$counter_fobj->id,"return"=>["scr"=>"counters_list"]]),"fa-arrow-down",api_text("table-td-move-down"),($counter_fobj->order!=count($counters_array)));
+  $ob->addElement(api_url(["scr"=>"counters_edit","idCounter"=>$counter_fobj->id,"return"=>["scr"=>"counters_list"]]),"fa-pencil",api_text("table-td-edit"));
+  if($counter_fobj->deleted){$ob->addElement(api_url(["scr"=>"controller","act"=>"undelete","obj"=>"cCountersCounter","idCounter"=>$counter_fobj->id,"return"=>["scr"=>"counters_list"]]),"fa-trash-o",api_text("table-td-undelete"),true,api_text("cCountersCounter-confirm-undelete"));}
+  else{$ob->addElement(api_url(["scr"=>"controller","act"=>"delete","obj"=>"cCountersCounter","idCounter"=>$counter_fobj->id,"return"=>["scr"=>"counters_list"]]),"fa-trash",api_text("table-td-delete"),true,api_text("cCountersCounter-confirm-delete"));}
   // make table row class
   $tr_class_array=array();
   if($counter_fobj->id==$_REQUEST['idCounter']){$tr_class_array[]="currentrow";}
@@ -49,7 +51,7 @@
   $table->addRowField($counter_fobj->name,"nowrap");
   $table->addRowField($counter_fobj->description,"truncate-ellipsis");
   $table->addRowField(api_tag("samp",$counter_fobj->identifier),"nowrap text-right");
-  $table->addRowField($ob->render(),"nowrap text-right");
+  if(api_checkAuthorization("counters-manage")){$table->addRowField($ob->render(),"nowrap text-right");}
  }
  // build grid object
  $grid=new strGrid();
